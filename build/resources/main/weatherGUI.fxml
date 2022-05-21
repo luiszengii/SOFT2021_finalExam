@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="739.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="weatherGUIController">
+   <children>
+      <ScrollPane prefHeight="400.0" prefWidth="200.0">
+         <content>
+            <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="637.0" prefWidth="640.0">
+               <children>
+                  <Text layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get US state weather" textAlignment="CENTER" wrappingWidth="639.33251953125">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="inputAPIKey" layoutX="247.0" layoutY="164.0" prefHeight="25.0" prefWidth="226.0" />
+                  <Text layoutX="152.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="input API key" />
+                  <TextField fx:id="usZipCode" layoutX="246.0" layoutY="199.0" prefHeight="25.0" prefWidth="72.0" />
+                  <Text layoutX="165.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="US zip code" />
+                  <Button fx:id="getWeatherButton" layoutX="266.0" layoutY="237.0" mnemonicParsing="false" text="Get Weather Data" />
+                  <Separator layoutX="222.0" layoutY="152.0" prefWidth="200.0" />
+                  <Text layoutX="134.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input Mode: " />
+                  <ChoiceBox fx:id="inputModePicker" layoutX="210.0" layoutY="66.0" prefHeight="25.0" prefWidth="84.0" />
+                  <Text layoutX="340.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output Mode: " />
+                  <ChoiceBox fx:id="outputModePicker" layoutX="418.0" layoutY="66.0" prefHeight="25.0" prefWidth="84.0" />
+                  <TextArea fx:id="weatherDataField" layoutX="91.0" layoutY="304.0" prefHeight="251.0" prefWidth="459.0" />
+                  <Text layoutX="285.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weather data" />
+                  <Separator layoutX="221.0" layoutY="272.0" prefHeight="9.0" prefWidth="200.0" />
+                  <CheckBox fx:id="useCachedData" layoutX="454.0" layoutY="203.0" mnemonicParsing="false" text="use cached data" />
+                  <Separator layoutX="220.0" layoutY="607.0" prefWidth="200.0" />
+                  <Text layoutX="240.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Threshold" />
+                  <TextField fx:id="thresholdInput" layoutX="305.0" layoutY="102.0" prefHeight="25.0" prefWidth="41.0" text="0" />
+                  <Text fx:id="range" layoutX="360.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(-100, 99)" />
+                  <Text fill="#d32323" layoutX="200.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="choose mode and threshold properly before proceed" />
+                  <Text fx:id="very" fill="RED" layoutX="23.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Very" visible="false">
+                     <font>
+                        <Font size="61.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="hot" fill="RED" layoutX="25.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hot" visible="false">
+                     <font>
+                        <Font size="71.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane prefHeight="386.0" prefWidth="640.0">
+         <content>
+            <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="291.0" prefWidth="641.0">
+               <children>
+                  <Text layoutX="2.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Weather Data to Another Email" textAlignment="CENTER" wrappingWidth="639.33251953125">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="outputApiKey" layoutX="245.0" layoutY="103.0" prefHeight="25.0" prefWidth="310.0" />
+                  <Text layoutX="155.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output API key" />
+                  <Text layoutX="181.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type in the required information below">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="224.0" layoutY="11.0" prefWidth="200.0" />
+                  <Separator layoutX="220.0" layoutY="607.0" prefWidth="200.0" />
+                  <TextField fx:id="targetEmailAddress" layoutX="245.0" layoutY="131.0" prefHeight="25.0" prefWidth="215.0" />
+                  <Text layoutX="111.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver Email Address" />
+                  <TextField fx:id="subject" layoutX="245.0" layoutY="187.0" prefHeight="25.0" prefWidth="215.0" />
+                  <Text layoutX="190.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" />
+                  <TextField fx:id="userEmailAddress" layoutX="246.0" layoutY="219.0" prefHeight="25.0" prefWidth="215.0" />
+                  <Text layoutX="130.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Email Address" />
+                  <TextField fx:id="userName" layoutX="246.0" layoutY="248.0" prefHeight="25.0" prefWidth="215.0" />
+                  <Text layoutX="172.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Name" />
+                  <Button fx:id="sendEmailButton" layoutX="278.0" layoutY="282.0" mnemonicParsing="false" text="Send Email" />
+                  <Text fill="#bf2b2b" layoutX="187.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email can only be sent after received weather data" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="targetName" layoutX="245.0" layoutY="159.0" prefHeight="25.0" prefWidth="215.0" />
+                  <Text layoutX="150.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver Name" />
+                  <TextArea fx:id="respondField" layoutX="498.0" layoutY="275.0" prefHeight="21.0" prefWidth="75.0" />
+                  <Text layoutX="489.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="respond message" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>
